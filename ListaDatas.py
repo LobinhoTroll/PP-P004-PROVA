@@ -49,6 +49,7 @@ class ListaDatas(AnaliseDados):
                 
                                
     
+    # Se a lista de itens for de tamanho par, mostra o item menor (Data mais antiga)
     def mostraMediana(self):
        lista = self.__lista
        mediana = Data
@@ -74,20 +75,21 @@ class ListaDatas(AnaliseDados):
         
     def listarEmOrdem(self):
         print("Lista de datas em ordem crescente (Da mais antiga pra mais atual):")
-        sortedLista = sorted(self.__lista)
         counter = 1
-        for i in sortedLista:
-            if counter < len(sortedLista):
+        for i in self.__lista:
+            if counter < len(self.__lista):
                 print(counter,"-",i, "\n")   
             else:
                 print(counter,"-",i,"\n")
             counter += 1
     
+    #Verifica na lista todas as datas que forem inferiores a 2019 e caso encontre, muda o dia do mês para 1.
     def modificar_dia_para_1(self, data):
         if data.ano < 2019:
             data.dia = 1
         return data
 
+    #incrementa a função "modificar_dia_para_1" e muda a lista original.
     def modificaData(self):
         print("Modificando datas: ")
 
@@ -104,6 +106,6 @@ class ListaDatas(AnaliseDados):
         
         print("Datas alteradas com sucesso!")
           
-    
+
     def __str__(self):
         pass
