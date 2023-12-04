@@ -29,7 +29,17 @@ class ListaIdades(AnaliseDados):
                     print(f"Erro: {e}. Idade inválida. Por favor, insira uma idade válida.")
     
     def mostraMediana(self):
+        lista = self.__lista
+        mediana = Idade
+        tamanho = len(lista)
         
+        if (tamanho % 2 == 0):
+           index = ((tamanho // 2 - 1) + (tamanho // 2)) // 2
+           mediana = lista[index]
+        else:
+           mediana = lista[tamanho // 2]
+        
+        print("Mediana: " + mediana)
 
     def mostraMenor(self):
         
