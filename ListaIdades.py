@@ -42,10 +42,12 @@ class ListaIdades(AnaliseDados):
         print("Mediana: " + mediana)
 
     def mostraMenor(self):
-        
+        lista = self.__lista
+        print("Menor idade: " + lista[0])
     
     def mostraMaior(self):
-        
+        index = len(self.__lista)
+        print("Maior data: " + self.__lista[index - 1])
 
     def __str__(self):
         pass
