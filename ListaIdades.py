@@ -49,5 +49,15 @@ class ListaIdades(AnaliseDados):
         index = len(self.__lista)
         print("Maior data: " + self.__lista[index - 1])
 
+    def listarEmOrdem(self):
+        sortedLista = self.__lista.sort()
+        counter = 1
+        for i in sortedLista:
+            if i < (len(sortedLista)-1):
+                print(counter,". \n",i,",")
+                counter += 1
+            else:
+                print(counter,". \n",i,".")
+                counter += 1
     def __str__(self):
         pass
