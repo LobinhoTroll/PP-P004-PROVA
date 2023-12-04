@@ -50,7 +50,7 @@ class ListaIdades(AnaliseDados):
         print("Maior data: " + self.__lista[index - 1])
 
     def listarEmOrdem(self):
-        sortedLista = self.__lista.sort()
+        sortedLista = sorted(self.__lista)
         counter = 1
         for i in sortedLista:
             if i < (len(sortedLista)-1):
