@@ -1,9 +1,9 @@
-from ListaDatas import ListaDatas
+#from ListaDatas import ListaDatas
 from ListaSalarios import ListaSalarios
 
 def main():
     
-    datas = ListaDatas()
+    #datas = ListaDatas()
     #nomes = ListaNomes()
     salarios = ListaSalarios()
     #idades = ListaIdades()
@@ -34,15 +34,7 @@ def main():
                 print("Salário(s) adicionado(s) com sucesso!")
                         
             elif opcao == 3:
-                datas.entradaDeDados()
-                print("---------------")
-                datas.mostraMaior()
-                print("---------------")
-                datas.mostraMenor()
-                print("---------------")
-                datas.mostraMediana()
-                print("---------------")
-                datas.listarEmOrdem()
+                 # Precisa Implementar
                 print(" ")
                 
             elif opcao == 4:
@@ -58,8 +50,7 @@ def main():
                 print("Salários reajustados em 10% com sucesso.")
                 
             elif opcao == 7:
-                datas.modificaData()
-                datas.listarEmOrdem()
+                 # Precisa Implementar
                 print(" ")
                 
             elif opcao == 8:
