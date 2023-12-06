@@ -4,7 +4,7 @@ from Idade import Idade
 class ListaIdades(AnaliseDados):
     
     def __init__(self):
-        super().__init__(type(Idade))
+        super().__init__(int)
         self.__lista = []        
     
     def entradaDeDados(self):
@@ -22,42 +22,39 @@ class ListaIdades(AnaliseDados):
                 idade = int(input("Digite a idade: "))
                 
                 try:
-                    idade = Idade(idade)
-                    self.__lista.append(str(idade))
+                    self.__lista.append(idade)
+
                     contador += 1
                 except ValueError as e:
                     print(f"Erro: {e}. Idade inválida. Por favor, insira uma idade válida.")
+                    
+        print("Idade adicionada com sucesso!")
     
     def mostraMediana(self):
-        lista = self.__lista
-        mediana = Idade
-        tamanho = len(lista)
-        
-        if (tamanho % 2 == 0):
-           index = ((tamanho // 2 - 1) + (tamanho // 2)) // 2
-           mediana = lista[index]
-        else:
-           mediana = lista[tamanho // 2]
-        
-        print("Mediana: " + mediana)
 
+        self.listarEmOrdem()
+        n = len(self.__lista)
+        if n % 2 == 0:
+            mediana = (self.__lista[n//2 - 1] + self.__lista[n//2]) / 2
+        else:
+            mediana = self.__lista[n//2]
+        print(f"Mediana dos salários: {mediana}")
+        
     def mostraMenor(self):
-        lista = self.__lista
-        print("Menor idade: " + lista[0])
-    
+        
+        menor_idade = min(self.__lista)
+        print(f"Menor idade: {menor_idade}")
+
     def mostraMaior(self):
-        index = len(self.__lista)
-        print("Maior data: " + self.__lista[index - 1])
+        
+        maior_idade = max(self.__lista)
+        print(f"Maior idade: {maior_idade}")
 
     def listarEmOrdem(self):
-        sortedLista = sorted(self.__lista)
-        counter = 1
-        for i in sortedLista:
-            if i < (len(sortedLista)-1):
-                print(counter,". \n",i,",")
-                counter += 1
-            else:
-                print(counter,". \n",i,".")
-                counter += 1
+        self.__lista.sort()
+        print("Idades em ordem crescente:", self.__lista)
+
+
+
     def __str__(self):
         pass

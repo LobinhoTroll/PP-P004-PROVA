@@ -11,6 +11,7 @@ class ListaSalarios(AnaliseDados):
         for i in range(n):
             salario = float(input(f"Informe o {i+1}º salário: "))
             self.__lista.append(salario)
+        print("Salário(s) adicionado(s) com sucesso!")
 
     def mostraMediana(self):
         self.listarEmOrdem()
@@ -34,7 +35,7 @@ class ListaSalarios(AnaliseDados):
         print("Salários em ordem crescente:", self.__lista)
         
     def reajusteSalarios(self):
-        self.__lista = list(map(lambda x: x * 1.1, self.__lista))
+        self.__lista = list(map(lambda x: round(x * 1.1, 2), self.__lista))
 
     def __str__(self):
         return str(self.__lista)
