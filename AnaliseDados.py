@@ -22,7 +22,7 @@ class AnaliseDados(ABC):
     @abstractmethod
     def mostraMaior(self):
         pass
-    
+
     @abstractmethod
     def listarEmOrdem(self):
         pass
