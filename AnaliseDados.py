@@ -28,4 +28,3 @@ class AnaliseDados(ABC):
         pass
 
 
-
