@@ -25,7 +25,7 @@ class AnaliseDados(ABC):
 
     @abstractmethod
     def listarEmOrdem(self):
-        
-        
         pass
+
+
 
